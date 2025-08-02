@@ -1,0 +1,176 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1rem;
+  /* Feminine Skincare Theme - Light Mode */
+  --background: #fef7f7;
+  --foreground: #2d1b1b;
+  --card: #ffffff;
+  --card-foreground: #2d1b1b;
+  --popover: #ffffff;
+  --popover-foreground: #2d1b1b;
+  --primary: #e91e63;
+  --primary-foreground: #ffffff;
+  --secondary: #f8e8f0;
+  --secondary-foreground: #2d1b1b;
+  --muted: #f5f0f2;
+  --muted-foreground: #6b5b5b;
+  --accent: #fce4ec;
+  --accent-foreground: #2d1b1b;
+  --destructive: #dc2626;
+  --border: #f0d4e0;
+  --input: #f8e8f0;
+  --ring: #e91e63;
+  --chart-1: #e91e63;
+  --chart-2: #f06292;
+  --chart-3: #f8bbd9;
+  --chart-4: #fce4ec;
+  --chart-5: #f3e5f5;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2d1b1b;
+  --sidebar-primary: #e91e63;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f8e8f0;
+  --sidebar-accent-foreground: #2d1b1b;
+  --sidebar-border: #f0d4e0;
+  --sidebar-ring: #e91e63;
+}
+
+.dark {
+  --background: #1a0f0f;
+  --foreground: #f5f0f2;
+  --card: #2d1b1b;
+  --card-foreground: #f5f0f2;
+  --popover: #2d1b1b;
+  --popover-foreground: #f5f0f2;
+  --primary: #f06292;
+  --primary-foreground: #1a0f0f;
+  --secondary: #3d2b2b;
+  --secondary-foreground: #f5f0f2;
+  --muted: #3d2b2b;
+  --muted-foreground: #a89898;
+  --accent: #4d3b3b;
+  --accent-foreground: #f5f0f2;
+  --destructive: #ef4444;
+  --border: #3d2b2b;
+  --input: #3d2b2b;
+  --ring: #f06292;
+  --chart-1: #f06292;
+  --chart-2: #e91e63;
+  --chart-3: #ad1457;
+  --chart-4: #880e4f;
+  --chart-5: #4a148c;
+  --sidebar: #2d1b1b;
+  --sidebar-foreground: #f5f0f2;
+  --sidebar-primary: #f06292;
+  --sidebar-primary-foreground: #1a0f0f;
+  --sidebar-accent: #3d2b2b;
+  --sidebar-accent-foreground: #f5f0f2;
+  --sidebar-border: #3d2b2b;
+  --sidebar-ring: #f06292;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/* Custom Gradient Backgrounds */
+.gradient-hero {
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #e1bee7 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(145deg, #ffffff 0%, #fce4ec 100%);
+}
+
+.gradient-button {
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Watercolor Effect */
+.watercolor-bg {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(252, 228, 236, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(248, 187, 217, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(225, 190, 231, 0.3) 0%, transparent 50%);
+}
+
+/* Smooth Transitions */
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+  opacity: 0.8;
+}
