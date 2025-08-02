@@ -1,31 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Layout/Header';
-import Footer from './components/Layout/Footer';
-import Home from './pages/Home';
-import Quiz from './pages/Quiz';
-import Results from './pages/Results';
-import Blog from './pages/Blog';
-import './App.css';
+import React from 'react'
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/quiz" element={<Quiz />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/blog" element={<Blog />} />
-            {/* Additional routes will be added here */}
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
-  );
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1>Welcome to My Blog</h1>
+      <p>This is a simple React application deployed on Vercel.</p>
+      <p>Markdown articles will be automatically published here when uploaded to GitHub.</p>
+    </div>
+  )
 }
 
-export default App;
-// Dummy change to trigger deployment
+export default App
+
