@@ -1,1 +1,1 @@
-# GlowGuide Skincare App
+# Updated README
