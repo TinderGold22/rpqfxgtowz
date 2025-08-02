@@ -57,8 +57,9 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden gradient-hero watercolor-bg">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <section className="relative overflow-hidden gradient-hero pattern-bg">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-transparent to-white/10"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -66,38 +67,38 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="text-center lg:text-left"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Discover Your
-                <span className="block bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-yellow-300 to-pink-300 bg-clip-text text-transparent">
                   Perfect Glow
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl">
+              <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl">
                 Get a personalized skincare routine designed just for you. Answer 5 simple questions 
                 and unlock the secret to radiant, healthy skin with expert-recommended products.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button asChild size="lg" className="gradient-button text-lg px-8 py-6">
+                <Button asChild size="lg" className="gradient-button text-lg px-8 py-6 neon-glow">
                   <Link to="/quiz">
                     Start Your Skincare Quiz
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                <Button variant="outline" size="lg" className="text-lg px-8 py-6 glass-card border-white/30 text-white hover:bg-white/10">
                   <Link to="/blog">Learn More</Link>
                 </Button>
               </div>
-              <div className="mt-8 flex items-center justify-center lg:justify-start space-x-4 text-sm text-muted-foreground">
+              <div className="mt-8 flex items-center justify-center lg:justify-start space-x-4 text-sm text-white/80">
                 <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-primary mr-1" />
+                  <CheckCircle className="h-4 w-4 text-green-400 mr-1" />
                   Free Quiz
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-primary mr-1" />
+                  <CheckCircle className="h-4 w-4 text-green-400 mr-1" />
                   Instant Results
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-4 w-4 text-primary mr-1" />
+                  <CheckCircle className="h-4 w-4 text-green-400 mr-1" />
                   Expert Approved
                 </div>
               </div>
@@ -110,9 +111,9 @@ const Home = () => {
               className="relative"
             >
               <div className="relative z-10 float-animation">
-                <div className="w-full max-w-md mx-auto aspect-square rounded-full gradient-card p-8 shadow-2xl">
+                <div className="w-full max-w-md mx-auto aspect-square rounded-full glass-card p-8 shadow-2xl">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-primary/20 to-accent/40 flex items-center justify-center">
-                    <Sparkles className="h-24 w-24 text-primary" />
+                    <Sparkles className="h-24 w-24 text-white" />
                   </div>
                 </div>
               </div>
@@ -120,16 +121,16 @@ const Home = () => {
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity }}
-                className="absolute top-4 right-4 w-16 h-16 rounded-full bg-accent/60 flex items-center justify-center"
+                className="absolute top-4 right-4 w-16 h-16 rounded-full glass-card flex items-center justify-center"
               >
-                <Heart className="h-8 w-8 text-primary" />
+                <Heart className="h-8 w-8 text-pink-400" />
               </motion.div>
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute bottom-8 left-4 w-12 h-12 rounded-full bg-secondary/60 flex items-center justify-center"
+                className="absolute bottom-8 left-4 w-12 h-12 rounded-full glass-card flex items-center justify-center"
               >
-                <Star className="h-6 w-6 text-primary" />
+                <Star className="h-6 w-6 text-yellow-400" />
               </motion.div>
             </motion.div>
           </div>
@@ -137,7 +138,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background pattern-bg">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -163,10 +164,10 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="h-full gradient-card border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <Card className="h-full gradient-card border-0 shadow-lg hover:shadow-xl transition-all duration-300 card-3d">
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <div className="text-primary">{feature.icon}</div>
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4 neon-glow">
+                      <div className="text-white">{feature.icon}</div>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-2">
                       {feature.title}
@@ -183,7 +184,7 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-accent/30">
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -209,7 +210,7 @@ const Home = () => {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Card className="gradient-card border-0 shadow-lg">
+                <Card className="glass-card border-0 shadow-lg hover:shadow-xl transition-all duration-300 card-3d">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
@@ -231,21 +232,22 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 gradient-hero">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 gradient-hero pattern-bg relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-white/10"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Ready to Transform Your Skin?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
               Take our personalized skincare quiz and discover the routine that will give you the glowing, healthy skin you deserve.
             </p>
-            <Button asChild size="lg" className="gradient-button text-lg px-8 py-6">
+            <Button asChild size="lg" className="gradient-button text-lg px-8 py-6 neon-glow">
               <Link to="/quiz">
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
